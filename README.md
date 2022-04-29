@@ -18,3 +18,5 @@ Item.tag{void_drop:1b}
 1. Copy the contents the `data/minecraft` folder into your data pack.
 2. Manually merge any conflicting loot tables you may have
 3. Implement the API as described above.
+
+For easier mangament of dependencies, check out my project [Datapack Build Manager](https://github.com/ICY105/DatapackBuildManager).
