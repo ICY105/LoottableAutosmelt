@@ -1,0 +1,75 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cobblestone",
+          "functions": [
+            {
+              "function": "minecraft:furnace_smelt",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "loottable_autosmelt:autosmelt",
+                          "levels": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:limit_count",
+              "limit": {
+                "min": 0,
+                "max": 0
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "loottable_autosmelt:trash",
+                          "levels": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "__smithed__": {
+    "rules": [
+      {
+        "type":"smithed:append",
+        "target":"pools[0].entries[0].functions",
+        "source":{
+          "type":"smithed:reference",
+          "path":"pools[0].entries[0].functions[0]"
+        }
+      }
+    ]
+  },
+  "random_sequence": "minecraft:blocks/cobblestone"
+}

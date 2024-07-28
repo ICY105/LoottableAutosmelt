@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:jungle_log",
+          "functions": [
+            {
+              "function": "minecraft:furnace_smelt",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "loottable_autosmelt:autosmelt",
+                          "levels": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ],
+  "__smithed__": {
+    "rules": [
+      {
+        "type":"smithed:append",
+        "target":"pools[0].entries[0].functions",
+        "source":{
+          "type":"smithed:reference",
+          "path":"pools[0].entries[0].functions[0]"
+        }
+      }
+    ]
+  },
+  "random_sequence": "minecraft:blocks/jungle_log"
+}

@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            },
+            {
+              "function": "minecraft:furnace_smelt",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "loottable_autosmelt:autosmelt",
+                          "levels": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "minecraft:chorus_fruit"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "__smithed__": {
+    "rules": [
+      {
+        "type":"smithed:insert",
+        "target":"pools[0].entries[0].functions[2]",
+        "source":{
+          "type":"smithed:reference",
+          "path":"pools[0].entries[0].functions[0]"
+        }
+      }
+    ]
+  },
+  "random_sequence": "minecraft:blocks/chorus_plant"
+}
