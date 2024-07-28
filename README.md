@@ -1,18 +1,10 @@
-# Loot-table Autosmelt
+# Loottable Autosmelt
 A Minecraft Datapack that uses loot tables to add the ability for tools to auto smelt mined blocks. Also includes the ability to void common block drops like cobblestone.
 
-## NBT Format
-These are NBT data specifications for items, storage, or entities that hold special data.
+## Enchantments
+As of version 2.0, Loottable Autosmelt adds 2 custom enchantments: `loottable_autosmelt:autosmelt` and `loottable_autosmelt:trash`. Simply add these to any item you wish to have these features. NBT data is no longer supported.
 
-```
-Add this tag to any item that should smelt mined blocks:
-Item.tag{auto_smelt:1b}
-```
-
-```
-Add this tag to any item that should destroy common block drops:
-Item.tag{void_drop:1b}
-```
+By default, these enchantments are not accessible via survival in any way.
 
 ## How to use
 1. Copy the contents the `data/minecraft` folder into your data pack.
