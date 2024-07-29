@@ -57,31 +57,31 @@
               "conditions": [
                 {
                   "condition": "minecraft:survives_explosion"
-                },
-                "functions": [
-                  {
-                    "function": "minecraft:limit_count",
-                    "limit": {
-                      "min": 0,
-                      "max": 0
-                    },
-                    "conditions": [
-                      {
-                        "condition": "minecraft:match_tool",
-                        "predicate": {
-                          "predicates": {
-                            "minecraft:enchantments": [
-                              {
-                                "enchantments": "loottable_autosmelt:trash",
-                                "levels": 1
-                              }
-                            ]
-                          }
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:limit_count",
+                  "limit": {
+                    "min": 0,
+                    "max": 0
+                  },
+                  "conditions": [
+                    {
+                      "condition": "minecraft:match_tool",
+                      "predicate": {
+                        "predicates": {
+                          "minecraft:enchantments": [
+                            {
+                              "enchantments": "loottable_autosmelt:trash",
+                              "levels": 1
+                            }
+                          ]
                         }
                       }
-                    ]
-                  }
-                ]
+                    }
+                  ]
+                }
               ],
               "name": "minecraft:dirt"
             }
