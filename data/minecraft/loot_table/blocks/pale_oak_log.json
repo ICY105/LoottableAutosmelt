@@ -14,13 +14,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:spruce_log"
+          "name": "minecraft:pale_oak_log"
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "minecraft:blocks/spruce_log",
+  "random_sequence": "minecraft:blocks/pale_oak_log",
   "__smithed__": {
     "rules": [
       {

@@ -2,59 +2,43 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "modifier": [
             {
-              "add": false,
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:set_count"
+                "max": 1,
+                "min": 0
+              }
             },
             {
-              "function": "minecraft:explosion_decay"
+              "type": "minecraft:explosion_decay"
             },
             {
-              "function": "minecraft:furnace_smelt",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "loottable_autosmelt:autosmelt",
-                          "levels": 1
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
+              "type": "minecraft:furnace_smelt",
+              "condition": "loottable_autosmelt:can_autosmelt"
             }
           ],
           "name": "minecraft:chorus_fruit"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ],
+  "random_sequence": "minecraft:blocks/chorus_plant",
   "__smithed__": {
     "rules": [
       {
-        "type":"smithed:insert",
-        "target":"pools[0].entries[0].functions[2]",
+        "type":"smithed:append",
+        "target":"pools[0].modifier",
         "source":{
           "type":"smithed:reference",
-          "path":"pools[0].entries[0].functions[0]"
+          "path":"pools[0].modifier[2]"
         }
       }
     ]
-  },
-  "random_sequence": "minecraft:blocks/chorus_plant"
+  }
 }

@@ -14,13 +14,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:spruce_log"
+          "name": "minecraft:stripped_poplar_wood"
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "minecraft:blocks/spruce_log",
+  "random_sequence": "minecraft:blocks/stripped_poplar_wood",
   "__smithed__": {
     "rules": [
       {

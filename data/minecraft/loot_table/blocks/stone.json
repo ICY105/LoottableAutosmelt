@@ -2,74 +2,35 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
+      "modifier": [
         {
-          "condition": "minecraft:survives_explosion"
+          "type": "minecraft:furnace_smelt",
+          "condition": "loottable_autosmelt:can_autosmelt"
         }
       ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:cobblestone",
-          "functions": [
-            {
-              "function": "minecraft:furnace_smelt",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "loottable_autosmelt:autosmelt",
-                          "levels": 1
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "function": "minecraft:limit_count",
-              "limit": {
-                "min": 0,
-                "max": 0
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "loottable_autosmelt:trash",
-                          "levels": 1
-                        }
-                      ]
-                    }
-                  }
-                }
-              ]
-            }
-          ]
+          "name": "minecraft:stone"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ],
+  "random_sequence": "minecraft:blocks/stone",
   "__smithed__": {
     "rules": [
       {
         "type":"smithed:append",
-        "target":"pools[0].entries[0].functions",
+        "target":"pools[0].modifier",
         "source":{
           "type":"smithed:reference",
-          "path":"pools[0].entries[0].functions[0]"
+          "path":"pools[0].modifier[0]"
         }
       }
     ]
-  },
-  "random_sequence": "minecraft:blocks/stone"
+  }
 }

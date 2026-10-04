@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:match_tool",
+  "predicate": {
+    "predicates": {
+      "minecraft:enchantments": [
+        {
+          "enchantments": "loottable_autosmelt:trash",
+          "levels": {
+            "min": 1
+          }
+        }
+      ]
+    }
+  }
+}
